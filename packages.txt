@@ -1,0 +1,4 @@
+nodejs-blob-to-buffer
+nodejs-parse-torrent-file
+nodejs-get-stdin
+nodejs-magnet-uri

@@ -1,0 +1,18 @@
+#!/bin/bash
+cd $HOME/OBS/home:fusion809:arch_extra/
+if ! [[ -d "nodejs-$1" ]]; then
+  mkdir nodejs-"$1"
+  npm2PKGBUILD "$1" > "nodejs-$1"/PKGBUILD
+  cp -a package-query/_service "nodejs-$1"
+  osc add "nodejs-$1"
+  cd "nodejs-$1"
+  updpkgsums
+  if [[ -d "src" ]]; then
+    bsdtar -xf *.tgz -C src
+  else
+    mkdir src
+    bsdtar -xf *.tgz -C src
+  fi
+  cd -
+  echo "nodejs-$1" >> $HOME/bin/packages.txt
+fi
