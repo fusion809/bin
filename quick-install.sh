@@ -1,5 +1,7 @@
 #!/bin/bash
-git clone https://github.com/fusion809/bin $HOME/bin
+if ! [[ -d "$HOME/bin" ]]; then
+  git clone https://github.com/fusion809/bin $HOME/bin
+fi
 PT=$(echo $PATH | grep "$HOME/bin")
 if ! [[ -n $PT ]]; then
   SH=${SHELL##*/}
