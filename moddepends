@@ -1,5 +1,7 @@
 #!/bin/bash
-sed -i -e "s/depends=('nodejs' 'npm' )/depends=($2)/g" $HOME/OBS/home:fusion809:arch_extra/$1/PKGBUILD
-cd $HOME/OBS/home:fusion809:arch_extra/$1
-osc ci -m "Initial commit"
-cd -
+if [[ -n $2 ]]; then
+  sed -i -e "s/depends=('nodejs')/depends=($2)/g" $HOME/OBS/home:fusion809:arch_extra/$1/PKGBUILD
+  cd $HOME/OBS/home:fusion809:arch_extra/$1
+  osc ci -m "Initial commit"
+  cd -
+fi
