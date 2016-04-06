@@ -15,5 +15,4 @@ if ! [[ -d "nodejs-$1" ]]; then
   fi
   cd -
   echo "nodejs-$1" >> $HOME/bin/packages.txt
-  osc ci -m "Initial commit"
 fi
