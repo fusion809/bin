@@ -4,7 +4,6 @@ from sys import argv
 print(argv[1])
 from subprocess import call
 from subprocess import Popen, PIPE
-
 with open("/home/fusion809/OBS/home:fusion809:arch_extra/nodejs-" + argv[1] + "/src/package/package.json") as json_file:
     json_data = json.load(json_file)
     deps = json_data["dependencies"]
@@ -18,7 +17,7 @@ with open("/home/fusion809/OBS/home:fusion809:arch_extra/nodejs-" + argv[1] + "/
         DEP.append(key)
         i = i+1
         print(i)
-        #call(["cpobsn", key, argv[1]])
+        call(["cpobsn", key, argv[1]])
     p=Popen(["depends"] + DEP, stdout=PIPE)
     output, err = p.communicate(b"input data that is passed to subprocess' stdin")
     rc = p.returncode
