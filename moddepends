@@ -1,2 +1,2 @@
 #!/bin/bash
-sed -i -e "s/depends=('nodejs')/depends=($2)/g" $HOME/OBS/home:fusion809:arch_extra/$1/PKGBUILD
+sed -i -e "s/depends=('nodejs' 'npm' )/depends=($2)/g" $HOME/OBS/home:fusion809:arch_extra/$1/PKGBUILD
