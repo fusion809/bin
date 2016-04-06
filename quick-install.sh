@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ -d "$HOME/bin" ]]; then
-  printf "Ah, you've already got a ~/bin directory!"
+  printf "Ah, you've already got a ~/bin directory!\n"
   printf "Do you want to clone it somewhere else? [Yes/No] "
   read YN
   if [[ $YN == "Yes" ]]; then
