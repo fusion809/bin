@@ -1,8 +1,15 @@
 #!/bin/bash
 if [[ -d "$HOME/bin" ]]; then
-  printf "Ah, you've already got a ~/bin directory! \nWhere do you want to clone this repo to?"
-  read BIN
-  git clone https://github.com/fusion809/bin $BIN
+  printf "Ah, you've already got a ~/bin directory!"
+  printf "Do you want to clone it somewhere else? [Yes/No] "
+  read YN
+  if [[ $YN == "Yes" ]]; then
+    printf "Where do you want to clone it?"
+    read BIN
+    git clone https://github.com/fusion809/bin $BIN
+  elif [[ $YN == "No" ]]; then
+    printf "Suit yourself!"
+  fi
 else
   git clone https://github.com/fusion809/bin $HOME/bin
 fi
